@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends PageBase {
 
-    @FindBy(id="text_input_1")
+    @FindBy(xpath="//*[@aria-label='Username']")
     private WebElement usernameInput;
 
     @FindBy(xpath="//*[@autocomplete='new-password']")

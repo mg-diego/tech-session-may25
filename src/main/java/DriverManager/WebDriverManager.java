@@ -15,6 +15,13 @@ public class WebDriverManager {
         return driver;
     }
 
+    public static void closeDriver() {
+        if (driver == null) {
+            driver = createDriverSession();
+        }
+        driver.close();
+    }
+
     protected static WebDriver createDriverSession() {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setAcceptInsecureCerts(true);

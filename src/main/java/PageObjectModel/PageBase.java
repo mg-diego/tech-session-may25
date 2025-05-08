@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class PageBase {
 
-    private static final int TIMEOUT_IN_SECONDS = 5;
+    private static final int TIMEOUT_IN_SECONDS = 15;
 
     protected WebDriver driver;
     private final WebDriverWait wait;
