@@ -5,6 +5,7 @@ import data.Catalog;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 
+import java.util.List;
 import java.util.Map;
 
 public class DatabaseSteps {
@@ -15,9 +16,17 @@ public class DatabaseSteps {
         this.catalogDatabaseClient = new CatalogDatabaseClient();
     }
 
-    @Given("the catalog is inserted in database")
+    @Given("the following catalogs are inserted in database")
     public void theCatalogIsInsertedInDatabase(DataTable table) {
-        Map<String, String> firstRow = table.asMaps(String.class, String.class).get(0);
-        this.catalogDatabaseClient.insertCatalog(new Catalog("", firstRow.get("Name"), firstRow.get("Description")));
+        List<Map<String, String>> rows = table.asMaps(String.class, String.class);
+        for (var row : rows) {
+            this.catalogDatabaseClient.insertCatalog(
+                    Catalog.builder()
+                            .id(row.get("ID"))
+                            .name(row.get("Name"))
+                            .description(row.get("Description"))
+                        .build()
+            );
+        }
     }
 }

@@ -16,10 +16,10 @@ public class WebDriverManager {
     }
 
     public static void closeDriver() {
-        if (driver == null) {
-            driver = createDriverSession();
+        if (driver != null){
+            driver.close();
+            driver.quit();
         }
-        driver.close();
     }
 
     protected static WebDriver createDriverSession() {

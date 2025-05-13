@@ -9,7 +9,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class HomePage extends PageBase {
 
-    @FindBy(xpath="//*[@data-testid='stHeading']")
+    @FindBy(xpath="//*[@id='welcome-to-the-testing-sample-app']")
     private WebElement homepageHeader;
 
     public HomePage(WebDriver driver) {

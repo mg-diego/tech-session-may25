@@ -1,33 +1,44 @@
 package StepDefinitions;
 
+import API.user.LoginResource;
+import Database.mongodb.CatalogDatabaseClient;
 import Database.mongodb.MongoDbClient;
 import DriverManager.WebDriverManager;
+import StepDefinitions.API.ApiValidatorSteps;
+import StepDefinitions.API.user.ApiLoginSteps;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
 import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import org.junit.jupiter.api.AfterAll;
 
+import java.util.Objects;
+
 public class Hooks {
 
     @BeforeAll
     public static void beforeAll() {
-        WebDriverManager.getDriver();
+        // Read config.json
     }
 
     @AfterAll
     public static void afterAll() {
-        WebDriverManager.closeDriver();
+
     }
 
-    @Before(value="diego")
+    @Before()
     public void beforeScenario(Scenario scenario) {
-        var mongoDbClient = new MongoDbClient();
-        mongoDbClient.deleteAllDocuments("catalog");
+        if (scenario.getSourceTagNames().stream().anyMatch(tag -> Objects.equals(tag.toUpperCase(), "@WEB"))) {
+            WebDriverManager.getDriver();
+        }
+        var catalogDatabaseClient = new CatalogDatabaseClient();
+        catalogDatabaseClient.deleteAllDocuments("catalog");
+        ApiValidatorSteps.response = null;
+        ApiLoginSteps.token = "";
     }
 
     @After
     public void afterScenario(Scenario scenario) {
-        // Clean up resources, close WebDriver, etc.
+        WebDriverManager.closeDriver();
     }
 }

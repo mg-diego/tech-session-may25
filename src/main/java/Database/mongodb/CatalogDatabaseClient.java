@@ -2,19 +2,23 @@ package Database.mongodb;
 
 import data.Catalog;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
-import java.util.Objects;
-import java.util.UUID;
 
 public class CatalogDatabaseClient extends MongoDbClient {
 
-    private String collectionName = "catalog";
+    private static String collectionName = "catalog";
 
-    public void insertCatalog(Catalog catalog) {
-        Document document = new Document("_id", !Objects.equals(catalog.id, "") ? catalog.id : UUID.randomUUID())
+    public static void insertCatalog(Catalog catalog) {
+        Document document = new Document("_id", catalog.id != null ? new ObjectId(catalog.id) : new ObjectId())
                 .append("name", catalog.name)
                 .append("description", catalog.description);
 
-        super.insertDocument(collectionName, document);
+        insertDocument(collectionName, document);
+    }
+
+    public static String getCatalogIdByName(String catalogName) {
+        var doc = findDocument(collectionName, "name", catalogName);
+        return doc != null ? doc.getObjectId("_id").toString() : null;
     }
 }
