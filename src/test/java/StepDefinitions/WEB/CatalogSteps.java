@@ -1,17 +1,17 @@
 package StepDefinitions.WEB;
 
-import DriverManager.WebDriverManager;
 import PageObjectModel.CatalogPage;
+import TestContext.TestContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class CatalogSteps extends WebStepBase {
+public class CatalogSteps {
 
     private final CatalogPage catalogPage;
 
-    public CatalogSteps() {
-        this.catalogPage = new CatalogPage(WebDriverManager.getDriver());
+    public CatalogSteps(TestContext testContext) {
+        this.catalogPage = new CatalogPage(testContext.getWebDriverManager().getDriver());
     }
 
     @Then("the user is at Catalog")

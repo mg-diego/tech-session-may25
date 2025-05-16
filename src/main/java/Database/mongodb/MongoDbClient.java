@@ -12,6 +12,7 @@ import org.bson.UuidRepresentation;
 import org.bson.codecs.UuidCodec;
 import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.configuration.CodecRegistry;
+import utils.ConfigurationReader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +22,8 @@ public class MongoDbClient {
     private static MongoDatabase database;
 
     public MongoDbClient() {
-        var connectionString = "mongodb://localhost:27017";
-        var dbName = "testing-sample-app";
+        var connectionString = ConfigurationReader.getMongodbConnectionString();
+        var dbName = ConfigurationReader.getMongodbDatabaseName();
 
         // Create a CodecRegistry that includes the UUID codec
         CodecRegistry codecRegistry = CodecRegistries.fromRegistries(

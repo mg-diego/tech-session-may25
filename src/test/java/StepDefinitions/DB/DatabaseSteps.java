@@ -1,7 +1,10 @@
 package StepDefinitions.DB;
 
 import Database.mongodb.CatalogDatabaseClient;
-import data.Catalog;
+import Database.postgresql.LanguageDatabaseClient;
+import TestContext.TestContext;
+import data.enums.Languages;
+import data.models.Catalog;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 
@@ -9,10 +12,11 @@ import java.util.List;
 import java.util.Map;
 
 public class DatabaseSteps {
-
+    private TestContext testContext;
     private CatalogDatabaseClient catalogDatabaseClient;
 
-    public DatabaseSteps() {
+    public DatabaseSteps(TestContext testContext) {
+        this.testContext = testContext;
         this.catalogDatabaseClient = new CatalogDatabaseClient();
     }
 
@@ -28,5 +32,12 @@ public class DatabaseSteps {
                         .build()
             );
         }
+    }
+
+    @Given("the language is set to {string} in database")
+    public void theLanguageIsSetToInDatabase(String locale) {
+        var language = Languages.fromLocale(locale);
+        testContext.setCurrentLanguage(language);
+        LanguageDatabaseClient.updateLanguageTo(language.getLocale());
     }
 }

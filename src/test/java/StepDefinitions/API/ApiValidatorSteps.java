@@ -1,37 +1,43 @@
 package StepDefinitions.API;
 
+import TestContext.TestContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.restassured.response.Response;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class ApiValidatorSteps {
-
-    public static Response response;
-
+    private TestContext ApiTestContext;
+    
+    public ApiValidatorSteps(TestContext testcontext) {
+        ApiTestContext = testcontext;
+    }   
     @Then("the response status code is {int}")
     public void responseStatusCodeIs(int expectedStatusCode) {
-        assertThat(response.statusCode()).isEqualTo(expectedStatusCode).withFailMessage(response.asString());
+        assertThat(ApiTestContext.getLastResponse().getStatusCode()).isEqualTo(expectedStatusCode).withFailMessage(getLastResponseAsString());
     }
 
     @And("the response contains {string}")
     public void theResponseContains(String expectedResponse) {
-        assertThat(response.asString()).contains(expectedResponse).withFailMessage(response.asString());
+        assertThat(getLastResponseAsString()).contains(expectedResponse).withFailMessage(getLastResponseAsString());
     }
 
     @And("the response does not contain {string}")
     public void theResponseDoesNotContain(String notExpectedResult) {
-        assertThat(response.asString()).doesNotContain(notExpectedResult).withFailMessage(response.asString());
+        assertThat(getLastResponseAsString()).doesNotContain(notExpectedResult).withFailMessage(getLastResponseAsString());
     }
 
     @And("the response contains the json key {string} with value {string}")
     public void theResponseContainsJsonKey(String jsonKey, String value) {
-        assertThat(response.jsonPath().getString(jsonKey)).isEqualTo(value).withFailMessage(response.asString());
+        assertThat(ApiTestContext.getLastResponse().jsonPath().getString(jsonKey)).isEqualTo(value).withFailMessage(getLastResponseAsString());
     }
 
     @And("the response contains the json key {string} with {int} items")
     public void theResponseContainsJsonKey(String jsonKey, int numberOfItems) {
-        assertThat(response.jsonPath().getList(jsonKey).size()).isEqualTo(numberOfItems).withFailMessage(response.asString());
+        assertThat(ApiTestContext.getLastResponse().jsonPath().getList(jsonKey).size()).isEqualTo(numberOfItems).withFailMessage(getLastResponseAsString());
+    }
+    
+    private String getLastResponseAsString() {
+        return ApiTestContext.getLastResponse().asString();
     }
 }

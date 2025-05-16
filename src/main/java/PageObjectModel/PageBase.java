@@ -17,6 +17,7 @@ public class PageBase {
 
     public PageBase(WebDriver driver) {
         this.driver = driver;
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT_IN_SECONDS));
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT_IN_SECONDS));
     }

@@ -1,6 +1,5 @@
 package PageObjectModel;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,14 +17,26 @@ public class MenuPage extends PageBase {
 
     public void selectMenuOption(String menuOption) throws InterruptedException {
         Thread.sleep(2000);
-        WebElement selectedMenuOption = switch (menuOption.toLowerCase()) {
-            case "homepage" -> menuOptions.get(0);
-            case "catalog" -> menuOptions.get(1);
-            case "user management" -> menuOptions.get(2);
-            case "language" -> menuOptions.get(3);
-            case "logout" -> menuOptions.get(4);
-            default ->  throw new UnsupportedOperationException(String.format("Menu option %s not available.", menuOption));
-        };
+        WebElement selectedMenuOption;
+        switch(menuOption.toLowerCase()) {
+            case "homepage":
+                selectedMenuOption = menuOptions.get(0);
+                break;
+            case "catalog":
+                selectedMenuOption = menuOptions.get(1);
+                break;
+            case "user management":
+                selectedMenuOption = menuOptions.get(2);
+                break;
+            case "language":
+                selectedMenuOption = menuOptions.get(3);
+                break;
+            case "logout":
+                selectedMenuOption = menuOptions.get(4);
+                break;
+            default:
+                throw new UnsupportedOperationException(String.format("Menu option %s not available.", menuOption));
+        }
 
         clickElement(selectedMenuOption);
     }

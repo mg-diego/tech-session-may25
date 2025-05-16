@@ -1,13 +1,14 @@
 package Database.mongodb;
 
-import data.Catalog;
+import data.models.Catalog;
 import org.bson.Document;
 import org.bson.types.ObjectId;
+import utils.ConfigurationReader;
 
 
 public class CatalogDatabaseClient extends MongoDbClient {
 
-    private static String collectionName = "catalog";
+    private static String collectionName = ConfigurationReader.getMongodbCatalogCollectionName();
 
     public static void insertCatalog(Catalog catalog) {
         Document document = new Document("_id", catalog.id != null ? new ObjectId(catalog.id) : new ObjectId())

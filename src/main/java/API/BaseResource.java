@@ -1,10 +1,12 @@
 package API;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+import utils.ConfigurationReader;
 
 public abstract class BaseResource {
-    protected static String baseURI = "http://localhost:";
+    protected static String baseURI = ConfigurationReader.getApiBaseUrl();
 
     public BaseResource() {
         RestAssured.baseURI = baseURI;
@@ -13,7 +15,7 @@ public abstract class BaseResource {
     protected static RequestSpecification getAuthorizedBaseRequest(int port, String token) {
         return  RestAssured
                 .given()
-                    .contentType("application/json")
+                    .contentType(ContentType.JSON)
                     .port(port)
                     .header("Authorization", "Bearer " + token);
     }

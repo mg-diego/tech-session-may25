@@ -1,7 +1,7 @@
 package API.catalog;
 
 import API.BaseResource;
-import data.Catalog;
+import data.models.Catalog;
 import io.restassured.response.Response;
 
 public class CatalogResource extends BaseResource {

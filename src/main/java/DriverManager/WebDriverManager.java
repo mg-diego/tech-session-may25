@@ -3,26 +3,30 @@ package DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import utils.ConfigurationReader;
 
 public class WebDriverManager {
 
-    private static WebDriver driver;
+    private WebDriver driver;
 
-    public static WebDriver getDriver() {
+    public WebDriver getDriver() {
         if (driver == null) {
             driver = createDriverSession();
         }
         return driver;
     }
 
-    public static void closeDriver() {
+    public void closeDriver() {
         if (driver != null){
             driver.close();
             driver.quit();
+            driver = null;
         }
     }
 
-    protected static WebDriver createDriverSession() {
+    protected WebDriver createDriverSession() {
+        System.setProperty("webdriver.chrome.driver", "C:\\temp\\chromedriver.exe");// Update this path
+
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setAcceptInsecureCerts(true);
         chromeOptions.addArguments("--remote-allow-origins=*");
@@ -32,7 +36,7 @@ public class WebDriverManager {
         var driver = new ChromeDriver(chromeOptions);
 
         driver.manage().window().maximize();
-        driver.get("http://localhost:8501");
+        driver.get(ConfigurationReader.getWebUrl());
 
         return driver;
     }

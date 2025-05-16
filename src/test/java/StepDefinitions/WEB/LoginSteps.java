@@ -1,14 +1,15 @@
 package StepDefinitions.WEB;
 
 import PageObjectModel.LoginPage;
+import TestContext.TestContext;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
-public class LoginSteps extends WebStepBase {
+public class LoginSteps {
     private final LoginPage loginPage;
 
-    public LoginSteps() {
-        loginPage = new LoginPage(super.webDriver);
+    public LoginSteps(TestContext testContext) {
+        loginPage = new LoginPage(testContext.getWebDriverManager().getDriver());
     }
 
     @Given("the user sets username {string}")

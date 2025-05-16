@@ -1,0 +1,24 @@
+{
+  "webUrl": "http://localhost:8501",
+  "database": {
+    "mongodb": {
+      "connectionString": "mongodb://localhost:27017",
+      "databaseName": "testing-sample-app",
+      "catalogCollection": "catalog"
+    },
+    "postgresql": {
+      "connectionString": "jdbc:postgresql://localhost:5432/",
+      "databaseName": "testing-sample-app",
+      "user": "user",
+      "password": "password"
+    }
+  },
+  "apiBaseUrl": "http://localhost:",
+  "endpoints": {
+    "userManagement": 8001,
+    "catalog": 8002,
+    "language": 8003
+  },
+  "defaultUser": "admin",
+  "defaultPassword": "admin"
+}

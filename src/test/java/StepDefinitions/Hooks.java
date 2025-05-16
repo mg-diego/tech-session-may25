@@ -1,24 +1,29 @@
 package StepDefinitions;
 
-import API.user.LoginResource;
 import Database.mongodb.CatalogDatabaseClient;
-import Database.mongodb.MongoDbClient;
+import Database.postgresql.LanguageDatabaseClient;
 import DriverManager.WebDriverManager;
-import StepDefinitions.API.ApiValidatorSteps;
-import StepDefinitions.API.user.ApiLoginSteps;
+import TestContext.TestContext;
+import data.enums.Languages;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
 import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import org.junit.jupiter.api.AfterAll;
+import utils.ConfigurationReader;
 
 import java.util.Objects;
 
 public class Hooks {
+    private TestContext hooksTestContext;
+
+    public Hooks(TestContext testContext) {
+        hooksTestContext = testContext;
+    }
 
     @BeforeAll
     public static void beforeAll() {
-        // Read config.json
+        ConfigurationReader.loadConfiguration();
     }
 
     @AfterAll
@@ -28,17 +33,25 @@ public class Hooks {
 
     @Before()
     public void beforeScenario(Scenario scenario) {
+        System.out.println("Starting scenario: " + Thread.currentThread().getName());
+
         if (scenario.getSourceTagNames().stream().anyMatch(tag -> Objects.equals(tag.toUpperCase(), "@WEB"))) {
-            WebDriverManager.getDriver();
+            hooksTestContext.setWebDriverManager(new WebDriverManager());
         }
-        var catalogDatabaseClient = new CatalogDatabaseClient();
-        catalogDatabaseClient.deleteAllDocuments("catalog");
-        ApiValidatorSteps.response = null;
-        ApiLoginSteps.token = "";
+
+        CatalogDatabaseClient.deleteAllDocuments("catalog");
+        LanguageDatabaseClient.updateLanguageTo(Languages.ENGLISH.getLocale());
+
+        hooksTestContext.setCurrentLanguage(Languages.ENGLISH);
+        hooksTestContext.setLastResponse(null);
+        hooksTestContext.setToken("");
     }
 
     @After
     public void afterScenario(Scenario scenario) {
-        WebDriverManager.closeDriver();
+        var webDriver = hooksTestContext.getWebDriverManager();
+        if (webDriver != null) {
+            webDriver.closeDriver();
+        }
     }
 }
