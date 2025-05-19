@@ -1,5 +1,5 @@
 {
-  "webUrl": "http://localhost:8501",
+  "webUrl": "http://host.docker.internal:8501",
   "database": {
     "mongodb": {
       "connectionString": "mongodb://localhost:27017",

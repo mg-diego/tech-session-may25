@@ -6,11 +6,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.net.MalformedURLException;
+
 public class CatalogSteps {
 
     private final CatalogPage catalogPage;
 
-    public CatalogSteps(TestContext testContext) {
+    public CatalogSteps(TestContext testContext) throws MalformedURLException {
         this.catalogPage = new CatalogPage(testContext.getWebDriverManager().getDriver());
     }
 

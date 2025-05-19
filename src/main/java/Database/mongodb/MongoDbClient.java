@@ -21,7 +21,7 @@ public class MongoDbClient {
     private static MongoClient mongoClient;
     private static MongoDatabase database;
 
-    public MongoDbClient() {
+    public static void open() {
         var connectionString = ConfigurationReader.getMongodbConnectionString();
         var dbName = ConfigurationReader.getMongodbDatabaseName();
 
@@ -37,45 +37,45 @@ public class MongoDbClient {
                 .codecRegistry(codecRegistry)
                 .build();
 
-        this.mongoClient = MongoClients.create(settings);
-        this.database = mongoClient.getDatabase(dbName);
+        mongoClient = MongoClients.create(settings);
+        database = mongoClient.getDatabase(dbName);
     }
 
-    public void close() {
+    public static void close() {
         if (mongoClient != null) {
             mongoClient.close();
         }
     }
 
-    public static void insertDocument(String collectionName, Document document) {
+    protected static void insertDocument(String collectionName, Document document) {
         MongoCollection<Document> collection = database.getCollection(collectionName);
         collection.insertOne(document);
         System.out.println("Document inserted: " + document.toJson());
     }
 
-    public static List<Document> findAllDocuments(String collectionName) {
+    protected static List<Document> findAllDocuments(String collectionName) {
         MongoCollection<Document> collection = database.getCollection(collectionName);
         return collection.find().into(new ArrayList<>());
     }
 
-    public static Document findDocument(String collectionName, String key, Object value) {
+    protected static Document findDocument(String collectionName, String key, Object value) {
         MongoCollection<Document> collection = database.getCollection(collectionName);
         return collection.find(Filters.eq(key, value)).first();
     }
 
-    public static void updateDocument(String collectionName, String key, Object value, String updateKey, Object updateValue) {
+    protected static void updateDocument(String collectionName, String key, Object value, String updateKey, Object updateValue) {
         MongoCollection<Document> collection = database.getCollection(collectionName);
         collection.updateOne(Filters.eq(key, value), Updates.set(updateKey, updateValue));
         System.out.println("Document updated where " + key + " = " + value);
     }
 
-    public static void deleteDocument(String collectionName, String key, Object value) {
+    protected static void deleteDocument(String collectionName, String key, Object value) {
         MongoCollection<Document> collection = database.getCollection(collectionName);
         collection.deleteOne(Filters.eq(key, value));
         System.out.println("Document deleted where " + key + " = " + value);
     }
 
-    public static void deleteAllDocuments(String collectionName) {
+    protected static void deleteAllDocuments(String collectionName) {
         MongoCollection<Document> collection = database.getCollection(collectionName);
         collection.deleteMany(new Document()); // Deletes all documents
         System.out.println("All documents deleted from collection: " + collectionName);

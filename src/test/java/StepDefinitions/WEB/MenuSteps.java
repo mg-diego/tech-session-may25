@@ -5,11 +5,13 @@ import TestContext.TestContext;
 import io.cucumber.java.en.Given;
 import utils.Translator;
 
+import java.net.MalformedURLException;
+
 public class MenuSteps {
     private TestContext testContext;
     private final MenuPage menuPage;
 
-    public MenuSteps(TestContext testContext) {
+    public MenuSteps(TestContext testContext) throws MalformedURLException {
         this.testContext = testContext;
         this.menuPage = new MenuPage(testContext.getWebDriverManager().getDriver());
     }

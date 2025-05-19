@@ -1,10 +1,13 @@
 package StepDefinitions;
 
 import Database.mongodb.CatalogDatabaseClient;
+import Database.mongodb.MongoDbClient;
 import Database.postgresql.LanguageDatabaseClient;
 import DriverManager.WebDriverManager;
 import TestContext.TestContext;
+import data.enums.Browsers;
 import data.enums.Languages;
+import data.models.ScenarioConfiguration;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
 import io.cucumber.java.BeforeAll;
@@ -12,7 +15,10 @@ import io.cucumber.java.Scenario;
 import org.junit.jupiter.api.AfterAll;
 import utils.ConfigurationReader;
 
-import java.util.Objects;
+import java.net.MalformedURLException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Hooks {
     private TestContext hooksTestContext;
@@ -32,14 +38,18 @@ public class Hooks {
     }
 
     @Before()
-    public void beforeScenario(Scenario scenario) {
-        System.out.println("Starting scenario: " + Thread.currentThread().getName());
+    public void beforeScenario(Scenario scenario) throws MalformedURLException {
+        var scenarioTags = scenario.getSourceTagNames().toArray(new String[0]);
 
-        if (scenario.getSourceTagNames().stream().anyMatch(tag -> Objects.equals(tag.toUpperCase(), "@WEB"))) {
+        if (Arrays.stream(scenarioTags).anyMatch(x -> x.equalsIgnoreCase("@WEB"))) {
+            var scenarioConfiguration = generateScenarioConfiguration(scenario.getName());
+
             hooksTestContext.setWebDriverManager(new WebDriverManager());
+            hooksTestContext.getWebDriverManager().initDriver(scenarioConfiguration);
         }
 
-        CatalogDatabaseClient.deleteAllDocuments("catalog");
+        MongoDbClient.open();
+        CatalogDatabaseClient.clearCatalogCollection();
         LanguageDatabaseClient.updateLanguageTo(Languages.ENGLISH.getLocale());
 
         hooksTestContext.setCurrentLanguage(Languages.ENGLISH);
@@ -53,5 +63,15 @@ public class Hooks {
         if (webDriver != null) {
             webDriver.closeDriver();
         }
+
+        MongoDbClient.close();
+    }
+
+    private ScenarioConfiguration generateScenarioConfiguration(String scenarioName) {
+        var configurationString = scenarioName.substring(scenarioName.indexOf("[") + 1);
+        configurationString = configurationString.substring(0, configurationString.indexOf("]"));
+        List<String> configuration = Arrays.stream(configurationString.split("-")).collect(Collectors.toList());
+
+        return new ScenarioConfiguration(Browsers.valueOf(configuration.get(0).trim()), configuration.get(1).trim(), configuration.get(2).trim(), scenarioName);
     }
 }
