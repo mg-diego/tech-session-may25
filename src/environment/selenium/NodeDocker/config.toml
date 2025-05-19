@@ -1,0 +1,73 @@
+[docker]
+configs = [
+    'selenium/standalone-chrome:136.0-20250515', '''
+    {
+      "browserName": "chrome",
+      "browserVersion": "136",
+      "env": {
+        "SE_SCREEN_WIDTH": "1920",
+        "SE_SCREEN_HEIGHT": "1080"
+      }
+    }
+  ''',
+
+    'selenium/standalone-chrome:96.0-20250505', '''
+    {
+      "browserName": "chrome",
+      "browserVersion": "96",
+      "env": {
+        "SE_SCREEN_WIDTH": "1024",
+        "SE_SCREEN_HEIGHT": "768"
+      }
+    }
+  ''',
+
+    'selenium/standalone-firefox:136.0-20250515', '''
+    {
+      "browserName": "firefox",
+      "browserVersion": "136",
+      "env": {
+        "SE_SCREEN_WIDTH": "1920",
+        "SE_SCREEN_HEIGHT": "1080"
+      }
+    }
+  ''',
+
+    'selenium/standalone-firefox:96.0-20220208', '''
+    {
+      "browserName": "firefox",
+      "browserVersion": "96",
+      "env": {
+        "SE_SCREEN_WIDTH": "1024",
+        "SE_SCREEN_HEIGHT": "768"
+      }
+    }
+  ''',
+
+    'selenium/standalone-edge:136.0-20250515', '''
+    {
+      "browserName": "MicrosoftEdge",
+      "browserVersion": "136",
+      "env": {
+        "SE_SCREEN_WIDTH": "1920",
+        "SE_SCREEN_HEIGHT": "1080"
+      }
+    }
+  ''',
+
+    'selenium/standalone-edge:96.0-20211217', '''
+    {
+      "browserName": "MicrosoftEdge",
+      "browserVersion": "96",
+      "env": {
+        "SE_SCREEN_WIDTH": "1024",
+        "SE_SCREEN_HEIGHT": "768",
+        "SE_SCREEN_DEPTH": "24"
+      }
+    }
+  '''
+]
+
+host-config-keys = ["Dns", "DnsOptions", "DnsSearch", "ExtraHosts", "Binds"]
+url = "http://127.0.0.1:2375"
+video-image = "selenium/video:ffmpeg-7.1-20250515"
