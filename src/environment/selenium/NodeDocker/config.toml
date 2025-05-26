@@ -71,3 +71,8 @@ configs = [
 host-config-keys = ["Dns", "DnsOptions", "DnsSearch", "ExtraHosts", "Binds"]
 url = "http://127.0.0.1:2375"
 video-image = "selenium/video:ffmpeg-7.1-20250515"
+
+[video]
+enabled = true
+output_dir = "/opt/selenium/assets/{test-name}"
+file_name_pattern = "{test-name}-{browser}-{session-id}.mp4"

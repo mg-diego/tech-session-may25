@@ -1,0 +1,202 @@
+{
+  "uid" : "8393eefb20942128",
+  "name" : "POST - Catalog (Empty Description)",
+  "fullName" : "src/test/resources/features/API/catalog/POST - Catalog.feature:34",
+  "historyId" : "91c44bdf92ad6049b37d123e1e223085",
+  "time" : {
+    "start" : 1748252864739,
+    "stop" : 1748252864869,
+    "duration" : 130
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "StepDefinitions.Hooks.beforeScenario(io.cucumber.java.Scenario)",
+    "time" : {
+      "start" : 1748252864739,
+      "stop" : 1748252864780,
+      "duration" : 41
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given the POST Login endpoint is requested with 'admin' username and 'admin' password",
+      "time" : {
+        "start" : 1748252864782,
+        "stop" : 1748252864818,
+        "duration" : 36
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Then the response status code is 200",
+      "time" : {
+        "start" : 1748252864818,
+        "stop" : 1748252864819,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "When the POST Catalog endpoint is requested with values",
+      "time" : {
+        "start" : 1748252864819,
+        "stop" : 1748252864838,
+        "duration" : 19
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "28966931801c1288",
+        "name" : "Data table",
+        "source" : "28966931801c1288.csv",
+        "type" : "text/tab-separated-values",
+        "size" : 23
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "Then the response status code is 400",
+      "time" : {
+        "start" : 1748252864838,
+        "stop" : 1748252864839,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "And the response contains the json key 'detail' with value 'EMPTY_DESCRIPTION'",
+      "time" : {
+        "start" : 1748252864839,
+        "stop" : 1748252864856,
+        "duration" : 17
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1
+  },
+  "afterStages" : [ {
+    "name" : "StepDefinitions.Hooks.afterScenario(io.cucumber.java.Scenario)",
+    "time" : {
+      "start" : 1748252864856,
+      "stop" : 1748252864864,
+      "duration" : 8
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "API"
+  }, {
+    "name" : "host",
+    "value" : "A-5CG138CF8R"
+  }, {
+    "name" : "thread",
+    "value" : "19084@A-5CG138CF8R.main(1)"
+  }, {
+    "name" : "feature",
+    "value" : "API POST Catalog"
+  }, {
+    "name" : "story",
+    "value" : "POST - Catalog (Empty Description)"
+  }, {
+    "name" : "suite",
+    "value" : "API POST Catalog"
+  }, {
+    "name" : "testClass",
+    "value" : "POST - Catalog (Empty Description)"
+  }, {
+    "name" : "framework",
+    "value" : "cucumber4jvm"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "gherkin_uri",
+    "value" : "file:///C:/REPOS/github/tech-session-may25/src/test/resources/features/API/catalog/POST%20-%20Catalog.feature"
+  }, {
+    "name" : "package",
+    "value" : "src.test.resources.features.API.catalog.POST - Catalog_feature.API POST Catalog"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "Scenario",
+    "value" : "Empty Description"
+  }, {
+    "name" : "description",
+    "value" : ""
+  }, {
+    "name" : "name",
+    "value" : "name"
+  }, {
+    "name" : "responseContent",
+    "value" : "EMPTY_DESCRIPTION"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "API" ]
+  },
+  "source" : "8393eefb20942128.json",
+  "parameterValues" : [ "Empty Description", "", "name", "EMPTY_DESCRIPTION" ]
+}

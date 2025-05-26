@@ -1,0 +1,404 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "A-5CG138CF8R",
+    "children" : [ {
+      "name" : "19084@A-5CG138CF8R.main(1)",
+      "children" : [ {
+        "name" : "DELETE - Catalog (Not existing ID)",
+        "uid" : "a31c749891ca16ee",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252862382,
+          "stop" : 1748252862624,
+          "duration" : 242
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "Not existing ID", "NOT_FOUND", "a89f5260c9e2d3688a158e22", "404" ]
+      }, {
+        "name" : "POST - Catalog (Empty Description)",
+        "uid" : "8393eefb20942128",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252864739,
+          "stop" : 1748252864869,
+          "duration" : 130
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "Empty Description", "", "name", "EMPTY_DESCRIPTION" ]
+      }, {
+        "name" : "DELETE - Catalog (No token)",
+        "uid" : "54f3f1c80ede7adb",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252858206,
+          "stop" : 1748252862107,
+          "duration" : 3901
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "GET - Catalog (Filter with values)",
+        "uid" : "6be75652144dd7c0",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252863119,
+          "stop" : 1748252863417,
+          "duration" : 298
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "GET - Catalog (No results)",
+        "uid" : "e535715bd82a6e28",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252862983,
+          "stop" : 1748252863107,
+          "duration" : 124
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "PUT - Catalog (Empty ID)",
+        "uid" : "5fa0ee37bf449fb5",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252865358,
+          "stop" : 1748252865510,
+          "duration" : 152
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "description", "", "name", "Empty ID", "EMPTY_ID", "400" ]
+      }, {
+        "name" : "GET - Catalog (Filter retrieve no values)",
+        "uid" : "ddf3629a7f54afa6",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252863428,
+          "stop" : 1748252863752,
+          "duration" : 324
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "PUT - Catalog (Empty Name)",
+        "uid" : "3d5037aad451e97a",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252865524,
+          "stop" : 1748252865697,
+          "duration" : 173
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "description", "68234725f9099814f13a0fd2", "", "Empty Name", "EMPTY_NAME", "400" ]
+      }, {
+        "name" : "POST - Catalog (Empty Name)",
+        "uid" : "677b160a15c2fe38",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252864553,
+          "stop" : 1748252864725,
+          "duration" : 172
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "Empty Name", "description", "", "EMPTY_NAME" ]
+      }, {
+        "name" : "POST - Login",
+        "uid" : "5ece20f6751fbca7",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252866082,
+          "stop" : 1748252866159,
+          "duration" : 77
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "admin", "bearer", "200", "admin" ]
+      }, {
+        "name" : "PUT - Catalog",
+        "uid" : "6e8d1c2573f766b0",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252865847,
+          "stop" : 1748252866076,
+          "duration" : 229
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "POST - Catalog (Check values)",
+        "uid" : "16f03f16be2a09d0",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252864374,
+          "stop" : 1748252864545,
+          "duration" : 171
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "GET - Catalog (No token)",
+        "uid" : "7a1b1d0d3e40f9fc",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252862848,
+          "stop" : 1748252862970,
+          "duration" : 122
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "POST - Catalog (Empty Name and Description)",
+        "uid" : "1edb10056d590dbf",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252864878,
+          "stop" : 1748252865025,
+          "duration" : 147
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "Empty Name and Description", "", "", "EMPTY_NAME" ]
+      }, {
+        "name" : "DELETE - Catalog (Wrong id format)",
+        "uid" : "cd96a1a535ebeff1",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252862140,
+          "stop" : 1748252862363,
+          "duration" : 223
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "Wrong id format", "Unexpected error: \\'123\\' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string", "123", "500" ]
+      }, {
+        "name" : "POST - Login",
+        "uid" : "1ffd01bcbe6609c0",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252866344,
+          "stop" : 1748252866428,
+          "duration" : 84
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "fake", "USER_NOT_FOUND", "404", "fake" ]
+      }, {
+        "name" : "POST - Login",
+        "uid" : "9016a8a3e7522404",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252866165,
+          "stop" : 1748252866254,
+          "duration" : 89
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "admin", "USER_NOT_FOUND", "404", "fake" ]
+      }, {
+        "name" : "PUT - Catalog (No token)",
+        "uid" : "c1c39287bc218c1f",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252865036,
+          "stop" : 1748252865132,
+          "duration" : 96
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "DELETE - Catalog",
+        "uid" : "ebbb8433402d415b",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252862644,
+          "stop" : 1748252862828,
+          "duration" : 184
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "PUT - Catalog (Empty Description)",
+        "uid" : "8806db5eab2d593b",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252865705,
+          "stop" : 1748252865841,
+          "duration" : 136
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "", "68234725f9099814f13a0fd2", "name", "Empty Description", "EMPTY_DESCRIPTION", "400" ]
+      }, {
+        "name" : "POST - Catalog (No token)",
+        "uid" : "aa043d3e16f90187",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252863773,
+          "stop" : 1748252864362,
+          "duration" : 589
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "PUT - Catalog (Not existing)",
+        "uid" : "4ffbb53354cdc61c",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252865142,
+          "stop" : 1748252865349,
+          "duration" : 207
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "description", "68234725f9099814f13a0fd2", "name", "Not existing", "NOT_FOUND", "404" ]
+      }, {
+        "name" : "POST - Login",
+        "uid" : "caddb9d076828c0b",
+        "parentUid" : "ed239a94343e24e727d32483a63b0d4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1748252866260,
+          "stop" : 1748252866338,
+          "duration" : 78
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "fake", "USER_WRONG_PASSWORD", "404", "admin" ]
+      } ],
+      "uid" : "ed239a94343e24e727d32483a63b0d4f"
+    } ],
+    "uid" : "6fd3c82af306221e4882510729025b77"
+  } ]
+}

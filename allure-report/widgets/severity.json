@@ -1,0 +1,231 @@
+[ {
+  "uid" : "8393eefb20942128",
+  "name" : "POST - Catalog (Empty Description)",
+  "time" : {
+    "start" : 1748252864739,
+    "stop" : 1748252864869,
+    "duration" : 130
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5ece20f6751fbca7",
+  "name" : "POST - Login",
+  "time" : {
+    "start" : 1748252866082,
+    "stop" : 1748252866159,
+    "duration" : 77
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4ffbb53354cdc61c",
+  "name" : "PUT - Catalog (Not existing)",
+  "time" : {
+    "start" : 1748252865142,
+    "stop" : 1748252865349,
+    "duration" : 207
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "54f3f1c80ede7adb",
+  "name" : "DELETE - Catalog (No token)",
+  "time" : {
+    "start" : 1748252858206,
+    "stop" : 1748252862107,
+    "duration" : 3901
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e535715bd82a6e28",
+  "name" : "GET - Catalog (No results)",
+  "time" : {
+    "start" : 1748252862983,
+    "stop" : 1748252863107,
+    "duration" : 124
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6be75652144dd7c0",
+  "name" : "GET - Catalog (Filter with values)",
+  "time" : {
+    "start" : 1748252863119,
+    "stop" : 1748252863417,
+    "duration" : 298
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8806db5eab2d593b",
+  "name" : "PUT - Catalog (Empty Description)",
+  "time" : {
+    "start" : 1748252865705,
+    "stop" : 1748252865841,
+    "duration" : 136
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "caddb9d076828c0b",
+  "name" : "POST - Login",
+  "time" : {
+    "start" : 1748252866260,
+    "stop" : 1748252866338,
+    "duration" : 78
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7a1b1d0d3e40f9fc",
+  "name" : "GET - Catalog (No token)",
+  "time" : {
+    "start" : 1748252862848,
+    "stop" : 1748252862970,
+    "duration" : 122
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9016a8a3e7522404",
+  "name" : "POST - Login",
+  "time" : {
+    "start" : 1748252866165,
+    "stop" : 1748252866254,
+    "duration" : 89
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "aa043d3e16f90187",
+  "name" : "POST - Catalog (No token)",
+  "time" : {
+    "start" : 1748252863773,
+    "stop" : 1748252864362,
+    "duration" : 589
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1edb10056d590dbf",
+  "name" : "POST - Catalog (Empty Name and Description)",
+  "time" : {
+    "start" : 1748252864878,
+    "stop" : 1748252865025,
+    "duration" : 147
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1ffd01bcbe6609c0",
+  "name" : "POST - Login",
+  "time" : {
+    "start" : 1748252866344,
+    "stop" : 1748252866428,
+    "duration" : 84
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cd96a1a535ebeff1",
+  "name" : "DELETE - Catalog (Wrong id format)",
+  "time" : {
+    "start" : 1748252862140,
+    "stop" : 1748252862363,
+    "duration" : 223
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3d5037aad451e97a",
+  "name" : "PUT - Catalog (Empty Name)",
+  "time" : {
+    "start" : 1748252865524,
+    "stop" : 1748252865697,
+    "duration" : 173
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c1c39287bc218c1f",
+  "name" : "PUT - Catalog (No token)",
+  "time" : {
+    "start" : 1748252865036,
+    "stop" : 1748252865132,
+    "duration" : 96
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ebbb8433402d415b",
+  "name" : "DELETE - Catalog",
+  "time" : {
+    "start" : 1748252862644,
+    "stop" : 1748252862828,
+    "duration" : 184
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "677b160a15c2fe38",
+  "name" : "POST - Catalog (Empty Name)",
+  "time" : {
+    "start" : 1748252864553,
+    "stop" : 1748252864725,
+    "duration" : 172
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5fa0ee37bf449fb5",
+  "name" : "PUT - Catalog (Empty ID)",
+  "time" : {
+    "start" : 1748252865358,
+    "stop" : 1748252865510,
+    "duration" : 152
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a31c749891ca16ee",
+  "name" : "DELETE - Catalog (Not existing ID)",
+  "time" : {
+    "start" : 1748252862382,
+    "stop" : 1748252862624,
+    "duration" : 242
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6e8d1c2573f766b0",
+  "name" : "PUT - Catalog",
+  "time" : {
+    "start" : 1748252865847,
+    "stop" : 1748252866076,
+    "duration" : 229
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "16f03f16be2a09d0",
+  "name" : "POST - Catalog (Check values)",
+  "time" : {
+    "start" : 1748252864374,
+    "stop" : 1748252864545,
+    "duration" : 171
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ddf3629a7f54afa6",
+  "name" : "GET - Catalog (Filter retrieve no values)",
+  "time" : {
+    "start" : 1748252863428,
+    "stop" : 1748252863752,
+    "duration" : 324
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
